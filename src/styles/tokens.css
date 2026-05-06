@@ -1,0 +1,39 @@
+:root {
+  /* Layout */
+  --container-max-width: 1280px;
+  --container-px: clamp(16px, 2.5vw, 24px);
+
+  /* Section vertical spacing */
+  --section-py-sm: clamp(24px, 4vw, 40px);
+  --section-py-md: clamp(40px, 6vw, 72px);
+  --section-py-lg: clamp(56px, 8vw, 96px);
+
+  /* Radius */
+  --radius-sm: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 1.875rem;
+  --radius-full: 9999px;
+
+  /* Colors */
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-surface-2: #000000;
+
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #0f766e;
+
+  /* Overlays */
+  --overlay-gradient: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.18) 52%,
+    transparent 100%
+  );
+
+  /* Motion */
+  --transition-standard: 300ms ease-out;
+  --transition-slow: 1000ms ease-out;
+  --hover-scale: 1.05;
+}

@@ -1,0 +1,148 @@
+@import "../src/styles/tokens.css";
+@import "../src/styles/typography.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sections */
+.section {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* Text roles */
+.text-h1,
+.text-h2,
+.text-h3,
+.text-sub {
+  color: var(--color-text);
+}
+
+.text-body {
+  color: var(--color-text-muted);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Auto‑apply to semantic tags */
+h1 { @apply text-h1; }
+h2 { @apply text-h2; }
+h3 { @apply text-h3; }
+p  { @apply text-body; }
+
+/* Button layer (keep these) */
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 font-medium whitespace-nowrap select-none relative;
+    @apply transition-all duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none;
+    @apply active:scale-[0.98];
+  }
+
+  .btn-hover-primary {
+    @apply bg-[var(--color-primary)] text-white;
+  }
+
+  .btn-hover-secondary {
+    @apply bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)];
+  }
+
+  .btn-hover-outline {
+    @apply bg-transparent text-[var(--color-text)] border border-[var(--color-border)];
+  }
+
+  .btn-hover-ghost {
+    @apply bg-transparent text-[var(--color-text)];
+  }
+
+  .btn-hover-danger {
+    @apply bg-red-600 text-white;
+  }
+
+  .btn-icon-right,
+  .btn-icon-left {
+    transition: transform 200ms ease;
+  }
+}
+
+/* Hover only on pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .btn-base:not(:disabled):not([aria-disabled="true"]) {
+    will-change: transform;
+  }
+
+  .btn-hover-primary:not(:disabled):not([aria-disabled="true"]):hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  .btn-hover-secondary:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--color-surface-2);
+    transform: translateY(-1px);
+  }
+
+  .btn-hover-outline:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--color-surface);
+    transform: translateY(-1px);
+  }
+
+  .btn-hover-ghost:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--color-surface);
+  }
+
+  .btn-hover-danger:not(:disabled):not([aria-disabled="true"]):hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+  }
+
+  .btn-icon-shift-right:hover .btn-icon-right {
+    transform: translateX(2px);
+  }
+
+  .btn-icon-rotate:hover .btn-icon-right,
+  .btn-icon-rotate:hover .btn-icon-left {
+    transform: rotate(45deg);
+  }
+}
+
+/* Scroll helpers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
