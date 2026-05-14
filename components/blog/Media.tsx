@@ -86,7 +86,8 @@ export default function Experiences() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl"
+            className="text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl"
+            
           >
             Stories, insights, and moments from the world of luxury motoring
           </motion.h2>
