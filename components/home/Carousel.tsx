@@ -6,11 +6,11 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import Image from "next/image";
 
 const images = [
-  "/carousel/card1.jpg",
-  "/carousel/card2.jpg",
-  "/carousel/card3.jpg",
-  "/carousel/card4.jpg",
-  "/carousel/card5.jpg",
+  "/Carousel/card1.jpg",
+  "/Crousel/card2.jpg",
+  "/Carousel/card3.jpg",
+  "/Carousel/card4.jpg",
+  "/Carousel/card5.jpg",
 ];
 
 export default function Carousel() {
